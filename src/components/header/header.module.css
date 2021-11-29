@@ -1,0 +1,76 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+
+.bar_left {
+  display: flex;
+  align-items: center;
+}
+
+.inputBtn {
+  width: 50px;
+}
+
+.bar_logo {
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.youtubeIcon {
+  color: #33cc66;
+}
+
+.geo {
+  color: #33cc66;
+}
+
+.bar_search {
+  display: flex;
+  align-items: center;
+  flex: 0.6;
+  border: 1px solid lightgray;
+}
+
+.input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0 1em;
+  font-size: 1em;
+}
+
+.inputBtn {
+  width: 3rem !important;
+  background-color: #fafafa;
+}
+
+.bar_right {
+  display: flex;
+  align-items: center;
+}
+
+.videocallIcon {
+  margin-right: 0.5em;
+}
+
+.appIcon {
+  margin-right: 0.5em;
+}
+
+.notificationIcon {
+  margin-right: 0.5em;
+}
+
+.avatar {
+  height: 2rem;
+  border-radius: 50%;
+  margin-left: 0.5em;
+}

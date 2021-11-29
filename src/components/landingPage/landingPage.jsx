@@ -2,24 +2,27 @@ import React from 'react';
 import styles from './landingPage.module.css';
 import bgImage from '../../images/landing-background.png';
 import Header from '../header/header';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import NoteIcon from '@mui/icons-material/Note';
 
 function LandingPage() {
   return (
-    <div className={styles.body}>
+    <div className={styles.LandingPage}>
       <nav className={styles.navbar}>
         <div className={styles.bar_left}>
-          <a className={styles.logo} href="#">
-            <i className="fab fa-youtube"></i>
+          <a className={styles.youtube} href="#">
+            <YouTubeIcon className={styles.icon} fontSize="large" />
           </a>
           <h1 className={styles.geo}>Geo</h1>
           <h1 className={styles.tube}>Tube</h1>
         </div>
         <div className={styles.bar_right}>
           <a className={styles.github} href="https://github.com/dgd03146">
-            <i className="fab fa-github"></i>
+            <GitHubIcon className={styles.icon} fontSize="large" />
           </a>
-          <a className={styles.blog} href="https://imgeozi.tistory.com">
-            <i className="fas fa-blog"></i>
+          <a className={styles.note} href="https://imgeozi.tistory.com">
+            <NoteIcon className={styles.icon} fontSize="large" />
           </a>
         </div>
       </nav>

@@ -1,4 +1,4 @@
-.body {
+.LandingPage {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-around;
   font-size: 1.5rem;
-  padding: 0 0.2em;
+  padding: 0.5em 0;
   width: 100%;
   margin-bottom: 0.2em;
   background-color: white;
@@ -25,44 +25,33 @@
 
 .bar_left {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.logo {
-  font-size: 3rem;
+a {
+  display: flex;
+  align-items: center;
+}
+
+.bar_right {
+  display: flex;
+}
+
+.icon {
   color: #33cc66;
-  margin-right: 0.1em;
   transition: 300ms ease-in-out;
 }
 
-.logo:hover {
+.icon:hover {
   color: rgb(0, 134, 64);
+}
+
+.github {
+  margin-right: 1em;
 }
 
 .geo {
   color: #33cc66;
-}
-
-.github {
-  font-size: 3rem;
-  color: #33cc66;
-  margin-right: 0.5em;
-  transition: 300ms ease-in-out;
-}
-
-.github:hover {
-  color: rgb(0, 134, 64);
-}
-
-.blog {
-  font-size: 3rem;
-  color: #33cc66;
-  transition: 300ms ease-in-out;
-}
-
-.blog:hover {
-  color: rgb(0, 134, 64);
 }
 
 .description {
@@ -93,14 +82,14 @@
   justify-content: center;
   align-items: center;
   margin-top: 2em;
-  width: 45em;
+  width: 40rem;
   padding: 2.5em;
   background-color: white;
   border-radius: 5em;
 }
 
 .input {
-  width: 60%;
+  flex: 1 1 70%;
   padding: 1.3rem;
   border-radius: 3em;
   margin-right: 0.5em;
@@ -112,7 +101,7 @@
 .search_btn {
   outline: none;
   cursor: pointer;
-  width: 12em;
+  flex: 1 1 30%;
   padding: 1.3em;
   border-radius: 3em;
   background-color: #33cc66;
@@ -120,9 +109,36 @@
   border: none;
   font-size: 1rem;
   font-weight: 600;
-  transition: 300ms ease-in-out;
+  transition: 100ms ease-in-out;
 }
 
 .search_btn:hover {
   background-color: rgb(0, 134, 64);
+  transform: scale(0.97);
+}
+
+@media screen and (max-width: 48rem) {
+  .navbar {
+    font-size: 1rem;
+  }
+  .description {
+    flex-direction: column;
+  }
+
+  .bg {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .search {
+    width: 22rem;
+  }
+
+  .mainPage {
+    font-size: 1rem;
+  }
 }
