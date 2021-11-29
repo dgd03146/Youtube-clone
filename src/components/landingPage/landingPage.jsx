@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './landingPage.module.css';
 import bgImage from '../../images/landing-background.png';
-import Header from '../header/header';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import NoteIcon from '@mui/icons-material/Note';
@@ -11,7 +10,7 @@ function LandingPage() {
     <div className={styles.LandingPage}>
       <nav className={styles.navbar}>
         <div className={styles.bar_left}>
-          <a className={styles.youtube} href="#">
+          <a className={styles.youtube} href="www.google.com">
             <YouTubeIcon className={styles.icon} fontSize="large" />
           </a>
           <h1 className={styles.geo}>Geo</h1>

@@ -28,11 +28,7 @@ function Header() {
         <SearchIcon fontSize="large" className={styles.inputBtn} />
       </div>
       <div className={styles.bar_right}>
-        <VideoCallIcon
-          fontSize="large"
-          className={styles.videocallIcon}
-          margin
-        />
+        <VideoCallIcon fontSize="large" className={styles.videocallIcon} />
         <AppsIcon fontSize="large" className={styles.appIcon} />
         <NotificationsIcon
           fontSize="large"

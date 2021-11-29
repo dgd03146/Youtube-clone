@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './sidebar.module.css';
 
 function Sidebar() {
   return (
-    <div>
+    <div className={styles.sideBar}>
       <h1>Sidebar</h1>
     </div>
   );
