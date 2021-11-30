@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './header.module.css';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,7 +8,21 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SearchIcon from '@mui/icons-material/Search';
 import avatar from './../../images/avatar.jpg';
 
-function Header() {
+const Header = ({ onSearch }) => {
+  const inputRef = useRef();
+  const handleSearch = () => {
+    const query = inputRef.current.value;
+    onSearch(query);
+  };
+
+  const onClick = () => {
+    handleSearch();
+  };
+  const onKeyPress = event => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
   return (
     <nav className={styles.header}>
       <div className={styles.bar_left}>
@@ -21,11 +35,15 @@ function Header() {
       </div>
       <div className={styles.bar_search}>
         <input
+          ref={inputRef}
           className={styles.input}
-          type="text"
+          type="search"
           placeholder="Enter the keywords"
+          onKeyPress={onKeyPress}
         />
-        <SearchIcon className={styles.inputBtn} />
+        <button className={styles.inputBtn} onClick={onClick}>
+          <SearchIcon className={styles.searchIcon} />
+        </button>
       </div>
       <div className={styles.bar_right}>
         <VideoCallIcon className={styles.videocallIcon} />
@@ -37,6 +55,6 @@ function Header() {
       </div>
     </nav>
   );
-}
+};
 
 export default Header;
