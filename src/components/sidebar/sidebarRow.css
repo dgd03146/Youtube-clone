@@ -1,0 +1,38 @@
+.sidebarRow {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidebarRow__icon {
+  font-size: 0.8rem;
+  color: lightgoldenrodyellow;
+}
+
+.sidebarRow__title {
+  margin-left: 1.5rem;
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+}
+
+.sidebarRow:hover {
+  background-color: rgb(51, 177, 51);
+  cursor: pointer;
+}
+
+.sidebarRow:hover > .sidebarRow__icon {
+  color: gold;
+}
+
+.sidebarRow:hover > .sidebarRow__title {
+}
+
+.sidebarRow.selected {
+  background-color: rgb(28, 156, 28);
+}
+
+.sidebarRow.selected > .sidebarRow__icon {
+  color: gold;
+}

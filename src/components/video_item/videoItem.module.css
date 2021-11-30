@@ -46,8 +46,18 @@
   font-size: 1.5em;
 }
 
+.videoInfo {
+  margin-top: 0.8em;
+  padding: 0 0.8em;
+}
+
 .title {
-  margin-top: 0.5em;
   font-size: 1rem;
   font-family: 'Noto Sans KR', sans-serif;
+  margin-bottom: 0.2em;
+}
+
+.channelTitle {
+  font-size: 0.9rem;
+  color: gray;
 }

@@ -14,7 +14,10 @@ const VideoItem = ({ video: { snippet } }) => {
           <span className={styles.description}>Let's start the video</span>
         </div>
       </div>
-      <h1 className={styles.title}>{snippet.title}</h1>
+      <div className={styles.videoInfo}>
+        <h1 className={styles.title}>{snippet.title}</h1>
+        <span className={styles.channelTitle}>{snippet.channelTitle}</span>
+      </div>
     </li>
   );
 };

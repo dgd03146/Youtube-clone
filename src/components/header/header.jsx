@@ -12,9 +12,9 @@ function Header() {
   return (
     <nav className={styles.header}>
       <div className={styles.bar_left}>
-        <MenuIcon fontSize="large" className={styles.icon} />
+        <MenuIcon className={styles.icon} />
         <div className={styles.bar_logo}>
-          <YouTubeIcon className={styles.youtubeIcon} fontSize="large" />
+          <YouTubeIcon className={styles.youtubeIcon} />
           <h1 className={styles.geo}>Geo</h1>
           <h1 className={styles.tube}>Tube</h1>
         </div>
@@ -25,15 +25,12 @@ function Header() {
           type="text"
           placeholder="Enter the keywords"
         />
-        <SearchIcon fontSize="large" className={styles.inputBtn} />
+        <SearchIcon className={styles.inputBtn} />
       </div>
       <div className={styles.bar_right}>
-        <VideoCallIcon fontSize="large" className={styles.videocallIcon} />
-        <AppsIcon fontSize="large" className={styles.appIcon} />
-        <NotificationsIcon
-          fontSize="large"
-          className={styles.notificationIcon}
-        />
+        <VideoCallIcon className={styles.videocallIcon} />
+        <AppsIcon className={styles.appIcon} />
+        <NotificationsIcon className={styles.notificationIcon} />
         <a href="https://www.youtube.com/channel/UCEPrexquOQfiDxFr8uIJ-8Q">
           <img className={styles.avatar} src={avatar} alt="avatar" />
         </a>
