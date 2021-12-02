@@ -1,7 +1,6 @@
 .ul {
   display: flex;
   flex-wrap: wrap;
-  flex: 1 1 87%;
   padding-left: 0;
   list-style: none;
   justify-content: center;
@@ -9,4 +8,18 @@
 
 .ul.list {
   flex-direction: column;
+  padding-right: 5rem;
+}
+
+@media screen and (max-width: 100rem) {
+  .ul.list {
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  .ul.list {
+    flex-direction: column;
+    padding-right: 0;
+  }
 }

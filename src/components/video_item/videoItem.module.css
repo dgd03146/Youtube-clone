@@ -1,8 +1,8 @@
 .li {
-  width: 22%;
-  margin: 1rem 0.5rem;
+  width: 26rem;
+  margin: 1rem 0;
   cursor: pointer;
-  padding: 0.5em;
+  padding: 0.5em 0.2rem;
 }
 
 .li:active {
@@ -10,16 +10,28 @@
 }
 
 .li.list {
-  background-color: white;
   width: 100%;
   display: flex;
+  margin: 0;
+  padding: 0.2em;
+}
 
-  margin: 1rem 0;
+.li.list .title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.9rem;
+}
+
+.li.list .channelTitle {
+  font-size: 0.8rem;
 }
 
 .li.list .thumbnails {
-  width: 10rem;
-  height: 6rem;
+  width: 12rem;
+  height: 100%;
+}
+
+.li.list :active {
+  background-color: #dad1d1de;
 }
 
 .thumnails_box {
@@ -70,6 +82,11 @@
   padding: 0 0.8em;
 }
 
+.li.list .videoInfo {
+  margin: 0;
+  padding: 0 0.8em;
+}
+
 .title {
   font-size: 1rem;
   font-family: 'Noto Sans KR', sans-serif;
@@ -77,6 +94,10 @@
 }
 
 .channelTitle {
-  font-size: 0.9rem;
-  color: gray;
+  font-size: 1rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: rgb(95, 95, 95);
+}
+
+@media screen and (max-width: 48rem) {
 }

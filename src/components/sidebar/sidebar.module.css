@@ -1,12 +1,16 @@
 .sideBar {
-  flex: 1 1 13%;
+  padding: 0.2em 0.2em;
   background-color: #33cc66;
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  top: 3.5rem;
+  height: 100vh;
 }
 
 .divider {
   padding: 0;
   height: 1px;
   border: 0;
-  margin: 0.2em 0.5em;
+  margin: 0.2em 0.2em;
   background-color: white;
 }

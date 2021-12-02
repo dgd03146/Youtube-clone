@@ -41,9 +41,7 @@ const Header = ({ onSearch }) => {
           placeholder="Enter the keywords"
           onKeyPress={onKeyPress}
         />
-        <button className={styles.inputBtn} onClick={onClick}>
-          <SearchIcon className={styles.searchIcon} />
-        </button>
+        <SearchIcon className={styles.searchIcon} onClick={onClick} />
       </div>
       <div className={styles.bar_right}>
         <VideoCallIcon className={styles.videocallIcon} />

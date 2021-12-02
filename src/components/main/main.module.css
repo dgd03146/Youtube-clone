@@ -1,12 +1,38 @@
 .content {
   display: flex;
-  background-color: #ededed;
+  background-color: #f9f9f9;
 }
 
 .detail {
   flex: 1 1 70%;
+  margin: 0.2rem 1rem 0 4rem;
 }
 
 .list {
   flex: 1 1 30%;
+}
+
+.container {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.sidebar_container {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+}
+
+@media screen and (max-width: 48rem) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .list {
+    padding: 1rem;
+    justify-content: center;
+  }
+  .detail {
+    margin: 1rem;
+  }
 }

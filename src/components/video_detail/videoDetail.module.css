@@ -1,0 +1,32 @@
+.title {
+  margin: 1rem 0;
+}
+
+.divide {
+  border: thin 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.channel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.channelTitle {
+  margin-bottom: 0.5rem;
+}
+
+.subscribe {
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.subscribe:hover {
+  background-color: rgb(197, 197, 197);
+}

@@ -17,6 +17,7 @@ function Main({ youtube }) {
     youtube
       .search(query) // generally promise line be placed
       .then(videos => setVideos(videos));
+    setSelectedVideo(null);
   };
 
   useEffect(() => {
@@ -30,7 +31,7 @@ function Main({ youtube }) {
       <Header onSearch={search} />
       <div className={styles.content}>
         {selectedVideo ? (
-          <>
+          <div className={styles.container}>
             <div className={styles.detail}>
               <VideoDetail video={selectedVideo} />
             </div>
@@ -41,16 +42,16 @@ function Main({ youtube }) {
                 display={'list'}
               />
             </div>
-          </>
+          </div>
         ) : (
-          <>
+          <div className={styles.sidebar_container}>
             <Sidebar />
             <VideoList
               videos={videos}
               onVideoClick={selectVideo}
               display={'grid'}
             />
-          </>
+          </div>
         )}
       </div>
     </div>
