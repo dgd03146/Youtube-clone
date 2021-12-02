@@ -1,6 +1,25 @@
 .li {
   width: 22%;
   margin: 1rem 0.5rem;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.li:active {
+  background-color: #dad1d1de;
+}
+
+.li.list {
+  background-color: white;
+  width: 100%;
+  display: flex;
+
+  margin: 1rem 0;
+}
+
+.li.list .thumbnails {
+  width: 10rem;
+  height: 6rem;
 }
 
 .thumnails_box {

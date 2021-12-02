@@ -3,7 +3,7 @@ import LandingPage from './components/landingPage/landingPage';
 import Main from './components/main/main';
 import Youtube from './service/youtube';
 
-const youtube = new Youtube('sdf');
+const youtube = new Youtube(process.env.REACT_APP_YOUTUBE_API_KEY);
 
 function App() {
   return (
