@@ -10,6 +10,7 @@ import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import PlaylistPlayIcon from '@mui/icons-material/PlaylistPlay';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 function Sidebar() {
   return (

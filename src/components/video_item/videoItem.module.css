@@ -100,4 +100,7 @@
 }
 
 @media screen and (max-width: 48rem) {
+  .li {
+    width: 18rem;
+  }
 }

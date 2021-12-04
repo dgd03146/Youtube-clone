@@ -63,12 +63,15 @@ button {
   align-items: center;
 }
 
-.videocallIcon {
-  margin-right: 0.5em;
+.icon {
+  font-size: 2rem !important;
+  margin: 0 0.5rem;
+  color: black;
+  cursor: pointer;
 }
 
-.appIcon {
-  margin-right: 0.5em;
+.icon:hover {
+  color: rgb(88, 88, 88);
 }
 
 .notificationIcon {
@@ -84,9 +87,13 @@ button {
 @media screen and (max-width: 48rem) {
   .header {
     padding: 1rem;
+    width: 100%;
   }
 
   .input {
     font-size: 0.5rem;
+  }
+  h1 {
+    font-size: 0.7rem;
   }
 }

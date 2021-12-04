@@ -2,11 +2,11 @@ import React, { useRef } from 'react';
 import styles from './header.module.css';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import MenuIcon from '@mui/icons-material/Menu';
-import VideoCallIcon from '@mui/icons-material/VideoCall';
-import AppsIcon from '@mui/icons-material/Apps';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+
 import SearchIcon from '@mui/icons-material/Search';
 import avatar from './../../images/avatar.jpg';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import DescriptionIcon from '@mui/icons-material/Description';
 
 const Header = ({ onSearch }) => {
   const inputRef = useRef();
@@ -44,10 +44,19 @@ const Header = ({ onSearch }) => {
         <SearchIcon className={styles.searchIcon} onClick={onClick} />
       </div>
       <div className={styles.bar_right}>
-        <VideoCallIcon className={styles.videocallIcon} />
-        <AppsIcon className={styles.appIcon} />
-        <NotificationsIcon className={styles.notificationIcon} />
-        <a href="https://www.youtube.com/channel/UCEPrexquOQfiDxFr8uIJ-8Q">
+        <a className={styles.link} href="https://github.com/dgd03146">
+          <GitHubIcon className={styles.icon} />
+        </a>
+        <a
+          href="https://gelatinous-macadamia-65a.notion.site/Coding-f8b575f544d34a4f8fbe2e6d2944da7e"
+          className={styles.link}
+        >
+          <DescriptionIcon className={styles.icon} />
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCEPrexquOQfiDxFr8uIJ-8Q"
+          className={styles.link}
+        >
           <img className={styles.avatar} src={avatar} alt="avatar" />
         </a>
       </div>
