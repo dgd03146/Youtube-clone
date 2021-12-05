@@ -4,7 +4,8 @@ import styles from './videoItem.module.css';
 const VideoItem = memo(
   ({ video, video: { snippet }, onVideoClick, display }) => {
     const displayType = display === 'list' ? styles.list : styles.grid;
-
+    let he = require('he');
+    const title = he.decode(video.snippet.title);
     return (
       <li
         className={`${styles.li} ${displayType}`}
@@ -29,7 +30,7 @@ const VideoItem = memo(
             />
           </div>
           <div className={styles.info_title}>
-            <h1 className={styles.title}>{snippet.title}</h1>
+            <h1 className={styles.title}>{title}</h1>
             <span className={styles.channelTitle}>{snippet.channelTitle}</span>
           </div>
         </div>

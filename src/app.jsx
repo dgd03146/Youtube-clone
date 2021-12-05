@@ -1,26 +1,62 @@
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/landingPage/landingPage';
 import Main from './components/main/main';
-import Youtube from './service/youtube';
-import axios from 'axios';
+import { useState, useCallback, useEffect } from 'react';
 
-const httpClient = axios.create({
-  baseURL: 'https://www.googleapis.com/youtube/v3',
-  params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
-});
+function App({ youtube }) {
+  const [videos, setVideos] = useState([]); // make once
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-console.log(process.env.REACT_APP_YOUTUBE_API_KEY);
+  const selectVideo = useCallback(video => {
+    setSelectedVideo(video);
+  }, []);
 
-const youtube = new Youtube(httpClient);
+  const search = useCallback(
+    query => {
+      youtube
+        .search(query) // generally promise line be placed
+        .then(videos => {
+          const promises = [];
+          Promise.all(youtube.channel(videos, promises)).then(() =>
+            setVideos(videos)
+          );
+        });
+      setSelectedVideo(null);
+    },
+    [youtube]
+  );
 
-function App() {
+  useEffect(() => {
+    youtube
+      .mostPopular() //
+      .then(videos => {
+        const promises = [];
+        Promise.all(youtube.channel(videos, promises)).then(() =>
+          setVideos(videos)
+        );
+      });
+    setSelectedVideo(null);
+  }, [youtube]);
+
   return (
-    <div className="app">
-      {/* <LandingPage /> */}
-      <Main youtube={youtube} />
-      {/* Sidebar */}
-      {/* Recommended Video */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<LandingPage onSearch={search} />} />
+        <Route path="/home" element={<LandingPage onSearch={search} />} />
+        <Route
+          path="/main"
+          element={
+            <Main
+              videos={videos}
+              selectedVideo={selectedVideo}
+              selectVideo={selectVideo}
+              search={search}
+            />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

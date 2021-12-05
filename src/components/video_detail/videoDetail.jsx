@@ -3,6 +3,8 @@ import styles from './videoDetail.module.css';
 
 const VideoDetail = ({ video }) => {
   const tags = [];
+  let he = require('he');
+  const title = he.decode(video.snippet.title);
   for (let i = 0; i < 4; i++) {
     video.snippet.tags && (tags[i] = `#${video.snippet.tags[i]} `);
   }
@@ -20,7 +22,7 @@ const VideoDetail = ({ video }) => {
         allowFullScreen
       ></iframe>
       {tags && <span className={styles.tag}>{tags}</span>}
-      <h2 className={styles.title}>{video.snippet.title}</h2>
+      <h2 className={title}>{video.snippet.title}</h2>
 
       <hr className={styles.divide} />
       <div className={styles.channel}>

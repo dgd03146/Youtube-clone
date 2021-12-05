@@ -1,44 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import Header from '../header/header';
 import Sidebar from '../sidebar/sidebar';
 import VideoDetail from '../video_detail/videoDetail';
 import VideoList from '../video_list/videoList';
 import styles from './main.module.css';
 
-function Main({ youtube }) {
-  const [videos, setVideos] = useState([]); // make once
-  const [selectedVideo, setSelectedVideo] = useState(null);
-
-  const selectVideo = useCallback(video => {
-    setSelectedVideo(video);
-  }, []);
-
-  const search = useCallback(
-    query => {
-      youtube
-        .search(query) // generally promise line be placed
-        .then(videos => {
-          const promises = [];
-          Promise.all(youtube.channel(videos, promises)).then(() =>
-            setVideos(videos)
-          );
-        });
-      setSelectedVideo(null);
-    },
-    [youtube]
-  );
-
-  useEffect(() => {
-    youtube
-      .mostPopular() //
-      .then(videos => {
-        const promises = [];
-        Promise.all(youtube.channel(videos, promises)).then(() =>
-          setVideos(videos)
-        );
-      });
-  }, [youtube]);
-
+function Main({ videos, selectedVideo, search, selectVideo }) {
   return (
     <div className={styles.mainPage}>
       <Header onSearch={search} />
