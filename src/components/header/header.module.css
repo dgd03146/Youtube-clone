@@ -54,7 +54,6 @@ button {
 .searchIcon {
   width: 100%;
   font-size: large;
-  background-color: #fafafa8e;
   cursor: pointer;
 }
 
@@ -91,9 +90,14 @@ button {
   }
 
   .input {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
   h1 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+  }
+  .bar_logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0.1em;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import styles from './header.module.css';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,7 +8,7 @@ import avatar from './../../images/avatar.jpg';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DescriptionIcon from '@mui/icons-material/Description';
 
-const Header = ({ onSearch }) => {
+const Header = memo(({ onSearch }) => {
   const inputRef = useRef();
   const handleSearch = () => {
     const query = inputRef.current.value;
@@ -62,6 +62,6 @@ const Header = ({ onSearch }) => {
       </div>
     </nav>
   );
-};
+});
 
 export default Header;

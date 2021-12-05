@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Header from '../header/header';
 import Sidebar from '../sidebar/sidebar';
 import VideoDetail from '../video_detail/videoDetail';
@@ -9,22 +9,35 @@ function Main({ youtube }) {
   const [videos, setVideos] = useState([]); // make once
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const selectVideo = video => {
+  const selectVideo = useCallback(video => {
     setSelectedVideo(video);
-  };
+  }, []);
 
-  const search = query => {
-    youtube
-      .search(query) // generally promise line be placed
-      .then(videos => setVideos(videos));
-    setSelectedVideo(null);
-  };
+  const search = useCallback(
+    query => {
+      youtube
+        .search(query) // generally promise line be placed
+        .then(videos => {
+          const promises = [];
+          Promise.all(youtube.channel(videos, promises)).then(() =>
+            setVideos(videos)
+          );
+        });
+      setSelectedVideo(null);
+    },
+    [youtube]
+  );
 
   useEffect(() => {
     youtube
       .mostPopular() //
-      .then(videos => setVideos(videos));
-  }, []);
+      .then(videos => {
+        const promises = [];
+        Promise.all(youtube.channel(videos, promises)).then(() =>
+          setVideos(videos)
+        );
+      });
+  }, [youtube]);
 
   return (
     <div className={styles.mainPage}>
