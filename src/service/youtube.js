@@ -8,7 +8,7 @@ class Youtube {
       const response = this.youtube
         .get('channels', {
           params: {
-            part: 'snippet,statistics',
+            part: 'snippet',
             maxResults: '36',
             id: videos[i].snippet.channelId,
           },
@@ -24,7 +24,7 @@ class Youtube {
   async mostPopular() {
     const response = await this.youtube.get('videos', {
       params: {
-        part: 'snippet,statistics',
+        part: 'snippet',
         chart: 'mostPopular',
         maxResults: 36,
       },
