@@ -10,17 +10,16 @@ function LandingPage({ onSearch }) {
   const navigate = useNavigate();
   const inputRef = useRef();
   const handleSearch = () => {
-    let query = inputRef.current.value;
+    const query = inputRef.current.value;
     onSearch(query);
-    query = '';
     navigate('/main');
   };
   const onClick = () => {
-    handleSearch();
+    inputRef.current.value && handleSearch();
   };
   const onKeyPress = event => {
     if (event.key === 'Enter') {
-      handleSearch();
+      inputRef.current.value && handleSearch();
     }
   };
 
