@@ -37,7 +37,7 @@
   color: gold;
 }
 
-@media screen and (max-width: 20rem) {
+@media screen and (max-width: 30rem) {
   .sidebarRow {
     padding: 0.5rem 0.7rem;
   }
