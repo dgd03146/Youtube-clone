@@ -36,3 +36,18 @@
 .sidebarRow.selected > .sidebarRow__icon {
   color: gold;
 }
+
+@media screen and (max-width: 20rem) {
+  .sidebarRow {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .sidebarRow__icon {
+    font-size: 0.6rem;
+    color: lightgoldenrodyellow;
+  }
+
+  .sidebarRow__title {
+    display: none;
+  }
+}

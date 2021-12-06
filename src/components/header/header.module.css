@@ -101,3 +101,12 @@ button {
     margin-left: 0.1em;
   }
 }
+
+@media screen and (max-width: 20rem) {
+  .icon {
+    font-size: small;
+  }
+  h1 {
+    display: none;
+  }
+}
